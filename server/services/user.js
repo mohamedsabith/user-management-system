@@ -1,4 +1,4 @@
-import {doSignup,doLogin} from '../controllers/userController.js';
+import {doSignup,doLogin} from '../controllers/userControllers.js';
 
 export const signup = (req,res) =>{
 

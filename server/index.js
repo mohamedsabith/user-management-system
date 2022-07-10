@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(cors())
 
 //api
-app.use('/',api)
+app.use('/api',api)
 
 const port = process.env.PORT || 5000;
 

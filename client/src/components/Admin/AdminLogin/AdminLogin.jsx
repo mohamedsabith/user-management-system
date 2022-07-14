@@ -42,11 +42,12 @@ export default function AdminLogin() {
     setLoading(true)
     AdminLoginApi(values).then((response)=>{
       setError(response.data.error);
-      response.data.status &&
-      swal("Login success!", "You clicked the button!", "success");
-      localStorage.setItem("AdminToken", response.data.token);
-    setLoading(false);
-    Navigate("/admin/dashboard")
+      if(response.data.status){
+        swal("Login success!", "You clicked the button!", "success");
+        localStorage.setItem("AdminToken", response.data.token);
+        setLoading(false);
+       Navigate("/admin/dashboard")
+      }
     }).catch((error)=>{
       swal("Oops!", "Something went wrong", "error").then(() => {
         Navigate("/admin");

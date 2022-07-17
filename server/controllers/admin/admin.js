@@ -1,5 +1,4 @@
-import { response } from 'express';
-import {adminLogin,allUsers,editUser,deleteUser} from '../controllers/adminControllers.js';
+import {adminLogin,allUsers,editUser,deleteUser} from './adminControllers.js';
 
 
 export const AdminLogin = (req,res) => {

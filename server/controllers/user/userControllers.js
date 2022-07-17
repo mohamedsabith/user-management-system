@@ -1,5 +1,5 @@
-import userModel from '../models/userModel.js';
-import {signupValidation} from '../validations/userValidation.js';
+import userModel from '../../models/userModel.js';
+import {signupValidation} from '../../validations/userValidation.js';
 import bcrypt from 'bcrypt';
 import Jwt from 'jsonwebtoken';
 

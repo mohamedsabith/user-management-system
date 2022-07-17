@@ -14,7 +14,7 @@ app.use(cors())
 //api
 app.use('/api',api)
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 7000;
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 

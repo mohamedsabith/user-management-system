@@ -48,6 +48,7 @@ export default function AdminLogin() {
         setLoading(false);
        Navigate("/admin/dashboard")
       }
+      setLoading(false)
     }).catch((error)=>{
       swal("Oops!", "Something went wrong", "error").then(() => {
         Navigate("/admin");

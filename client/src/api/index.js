@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:5000/api";
+const url = "http://localhost:7000/api";
 
 //user api
 export const SignupUserApi = (userData)=> axios.post(`${url}/signup`,userData);

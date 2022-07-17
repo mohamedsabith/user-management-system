@@ -58,6 +58,7 @@ export default function SignUp() {
             "You clicked the button!",
             "success"
           );
+          console.log(res.data);
         localStorage.setItem("AuthToken", res.data.token);
         Navigate("/login");
         setLoading(false);

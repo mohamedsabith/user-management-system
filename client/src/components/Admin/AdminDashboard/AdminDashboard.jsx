@@ -44,11 +44,15 @@ export default function AdminDashboards() {
     setOpen(false);
   };
 
-  useEffect(() => {
+  const userData = () =>{
     AllUsersApi().then((data) => {
       setData(data.data);
     });
-  }, [data, loading]);
+  }
+ 
+  useEffect(() => {
+     userData()
+  }, []);
 
   const handleSubmit = (event, value) => {
     event.preventDefault();
@@ -86,6 +90,7 @@ export default function AdminDashboards() {
             swal("Poof! user has been deleted!", {
               icon: "success",
             });
+            userData()
             setLoading(false);
           })
           .catch((error) => {

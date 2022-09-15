@@ -11,3 +11,6 @@ export const AdminLoginApi = (adminData)=> axios.post(`${url}/admin/login`,admin
 export const AllUsersApi = () => axios.get(`${url}/admin/allUsers`)
 export const EditUserApi = (data,id)=> axios.patch(`${url}/admin/editUser`,{data,id})
 export const DeleteUserApi = (userId)=> axios.post(`${url}/admin/deleteUser`,userId)
+
+//movie api
+export const MovieApi = (data) => axios.post('https://hoblist.com/api/movieList',data)

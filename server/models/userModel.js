@@ -17,12 +17,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  createdAt : {
+  createdAt: {
     type: Date,
-    default : new Date(),
+    default: new Date(),
   },
 });
 
 const userModel = mongoose.model("User", userSchema);
 
-export default userModel
+export default userModel;

@@ -9,9 +9,9 @@ const adminSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  createdAt : {
+  createdAt: {
     type: Date,
-    default : new Date(),
+    default: new Date(),
   },
 });
 

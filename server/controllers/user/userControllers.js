@@ -11,7 +11,7 @@ const doSignup = (data) =>
     const Validations = await signupValidation(data);
 
     if (Validations.error) {
-      reject({
+     return reject({
         status: false,
         errorSignup: Validations.error.details[0].message.replace(/"/g, ""),
       });
@@ -20,7 +20,7 @@ const doSignup = (data) =>
     // checking user already exist
     const user = await userModel.findOne({ email: data.email });
     if (user) {
-      reject({
+      return reject({
         status: false,
         errorSignup: "Another account is using this email.",
       });
@@ -39,7 +39,7 @@ const doSignup = (data) =>
     await newUser.save(async (err, res) => {
       if (err) {
         console.log(err);
-        reject({ status: false, errorSignup: err.message });
+        return reject({ status: false, errorSignup: err.message });
       }
       const token = Jwt.sign(
         {
@@ -67,7 +67,7 @@ const doLogin = (data) =>
     const user = await userModel.findOne({ email: data.email });
 
     if (!user) {
-      reject({
+     return reject({
         status: false,
         errorLogin: "User not found. Please check your mail.",
       });
@@ -76,7 +76,7 @@ const doLogin = (data) =>
     // Comparing plain password to hashed password
     await bcrypt.compare(data.password, user.password).then((status) => {
       if (!status) {
-        reject({
+       return reject({
           status: false,
           errorLogin:
             "Your password was incorrect. Please check your password.",
